@@ -117,18 +117,18 @@ string *BinaryNumber::getTwoscomplement(){
   string *twos = new string;
   twos->resize(binaryNumber->length());
 
-  int carr = 1;
+  int *carr = new int(1);
 
   for (int i = binaryNumber->length()  - 1; i >= 0; i--) 
   {
-    if ((*ones)[i] == '1' && carr == 1) 
+    if ((*ones)[i] == '1' && *carr == 1) 
     {
       (*twos)[i] = '0';
     }
-    else if ((*ones)[i] == '0' && carr == 1) 
+    else if ((*ones)[i] == '0' && *carr == 1) 
     {
       (*twos)[i] = '1';
-      carr = 0;
+      *carr = 0;
     }
     else 
     {
